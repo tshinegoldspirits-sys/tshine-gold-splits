@@ -1,6 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T SHINE GOLD SPLITS</title>
+
+<style>
+:root{
+  --gold:#d4af37;
+  --dark:#0a0a0a;
+  --card:#141414;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background:var(--dark);
+  color:white;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(90deg,#b8860b,var(--gold));
+  color:black;
+  text-align:center;
+  padding:18px;
+}
+
+header h1{
+  letter-spacing:3px;
+}
+
+/* NAV */
+nav{
+  position:sticky;
+  top:0;
+  background:#111;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  padding:12px;
+  z-index:1000;
+}
+
+nav a{
+  color:var(--gold);
+  text-decoration:none;
+  font-weight:bold;
+}
+
+nav a:hover{
+  color:white;
+}
+
+/* HERO */
+.hero{
+  height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:url('https://images.unsplash.com/photo-1602173574767-37ac01994b2a') center/cover;
+  position:relative;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+}
+
+.hero-content{
+  position:relative;
+  z-index:1;
+}
+
+.hero h2{
+  font-size:50px;
+  color:var(--gold);
+}
+
+.hero p{
+  margin-top:10px;
+  font-size:18px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 24px;
+  background:var(--gold);
+  color:black;
+  font-weight:bold;
+  border-radius:6px;
+  text-decoration:none;
+}
+
+/* SECTIONS */
+section{
+  padding:60px 20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.title{
+  text-align:center;
+  color:var(--gold);
+  margin-bottom:25px;
+  font-size:28px;
+}
+
+/* CARDS */
+.card{
+  background:var(--card);
+  padding:18px;
+  margin:12px 0;
+  border-left:4px solid var(--gold);
+  border-radius:6px;
+}
+
+/* FORM */
+form{
+  background:#111;
+  padding:20px;
+  border-radius:10px;
+}
+
+input, textarea{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border:none;
+  border-radius:6px;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  background:var(--gold);
+  border:none;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  padding:14px;
+  border-radius:50px;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  transition:all 0.8s ease;
+}
+
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>T SHINE GOLD SPLITS</h1>
+  <p>Precision • Luxury • Craftsmanship</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#quote">Quote</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h2>Gold Splits Excellence</h2>
+    <p>We design precision gold splits with long-lasting professional craftsmanship.</p>
+    <a class="btn" href="#quote">Get Free Quote</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="fade">
+  <h2 class="title">About Us</h2>
+  <div class="card">
+    T SHINE GOLD SPLITS is a premium craftsmanship workshop specializing in gold splits,
+    repairs, mesh reinforcement systems, and bonding solutions with precision finishing.
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="fade">
+  <h2 class="title">Services</h2>
+  <div class="card">✔ Custom Gold Splits Manufacturing</div>
+  <div class="card">✔ Repair & Adjustment</div>
+  <div class="card">✔ Mesh & Bond Application</div>
+  <div class="card">✔ Precision Gold Crafting</div>
+</section>
+
+<!-- QUOTE FORM -->
+<section id="quote" class="fade">
+  <h2 class="title">Request Quote</h2>
+
+  <form onsubmit="sendWhatsApp(); return false;">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="text" id="service" placeholder="Service Needed" required>
+    <textarea id="message" rows="4" placeholder="Describe your request..." required></textarea>
+    <button type="submit">Send via WhatsApp</button>
+  </form>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fade">
+  <h2 class="title">Contact</h2>
+  <div class="card">
+    📞 +264 81 713 4300<br>
+    📍 Namibia<br>
+    📧 tshinegoldsplits@email.com
+  </div>
+</section>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/264817134300" target="_blank">
+💬 Chat
+</a>
+
+<script>
+// FADE SCROLL ANIMATION
+const elements = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.classList.add('show');
+    }
+  });
+});
+
+// WHATSAPP FORM
+function sendWhatsApp(){
+  let name = document.getElementById("name").value;
+  let service = document.getElementById("service").value;
+  let message = document.getElementById("message").value;
+
+  let url = "https://wa.me/264817134300?text="
+    + "Name: " + name + "%0a"
+    + "Service: " + service + "%0a"
+    + "Message: " + message;
+
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>T SHINE GOLD SPLITS</title>
