@@ -1,4 +1,15 @@
-<a href="https://wa.me/264814417035" target="_blank"
+<section style="padding: 40px; text-align: center; background: #f5f5f5;">
+  <h2>Contact Us</h2>
+
+  <p><strong>Phone:</strong> +264 81 441 7035</p>
+
+  <p>
+    <a href="https://wa.me/264814417035" target="_blank"
+       style="color: #25D366; font-weight: bold;">
+       Chat on WhatsApp
+    </a>
+  </p>
+</section><a href="https://wa.me/264814417035" target="_blank"
    style="
    position: fixed;
    bottom: 20px;
